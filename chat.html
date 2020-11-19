@@ -31,6 +31,9 @@
         
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
+            var url = window.location.href;
+                    console.log(window.location.href);
+                    console.log("here");
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -44,9 +47,7 @@
                 // Settings for Chat
                 embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
                     
-                    var url = window.location.href;
-                    console.log(window.location.href);
-                    console.log("here");
+                    
                     if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("samplehtml/chtuu"))
                         return "5731W000000blNV";
                     else if (prechatFormData[3].value === "Need more information on available plans, features and pricing")

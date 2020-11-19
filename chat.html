@@ -44,7 +44,7 @@
                 // Settings for Chat
                 embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
                     var url = window.location.href;
-                    if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("samplehtml/chinkt.html"))
+                    if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("samplehtml/chat"))
                         return "5731W000000blNV";
                     else if (prechatFormData[3].value === "Need more information on available plans, features and pricing")
                     return "573400000008PFQ";
@@ -53,7 +53,9 @@
                     else if (prechatFormData[3].value === "Get customer support")
                     return "573400000008PFQ";
                     else if (prechatFormData[3].value === "General product inquiry")
-                    return "573400000008PFQ";  
+                    return "573400000008PFQ";
+                    else return "573400000008PFQ";
+
                     
                 };
                 //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields

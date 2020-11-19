@@ -45,7 +45,7 @@
                 embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
                     
                     var url = window.location.href;
-                    console.log(url);
+                    console.log(window.location.href);
                     if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("samplehtml/chtuu"))
                         return "5731W000000blNV";
                     else if (prechatFormData[3].value === "Need more information on available plans, features and pricing")

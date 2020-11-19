@@ -32,8 +32,7 @@
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
             var url = window.location.href;
-                    console.log(window.location.href);
-                    console.log(url.includes("samplehtml/chtuu"));
+                    
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -44,6 +43,8 @@
                 //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
                 //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
                 console.log("came here");
+                console.log(window.location.href);
+                console.log(url.includes("samplehtml/chtuu"));
                 // Settings for Chat
                 embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
                     

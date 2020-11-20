@@ -1,0 +1,110 @@
+<html>
+<body>
+    <p>Hello World</p>
+    <!--
+    <a id="liveagent_button_online_5731W000000blNV" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5731W000000blNV')">Online Chat Content </a><div id="liveagent_button_offline_5731W000000blNV" style="display: none;"> Offline Chat Content </div><script type="text/javascript">
+        if (!window._laq) { window._laq = []; }
+        window._laq.push(function(){liveagent.showWhenOnline('5731W000000blNV', document.getElementById('liveagent_button_online_5731W000000blNV'));
+        liveagent.showWhenOffline('5731W000000blNV', document.getElementById('liveagent_button_offline_5731W000000blNV'));
+        });</script>
+        
+
+        <script type='text/javascript' src='https://c.la3-c1cs-ph2.salesforceliveagent.com/content/g/js/50.0/deployment.js'></script>
+        <script type='text/javascript'>
+        liveagent.init('https://d.la3-c1cs-ph2.salesforceliveagent.com/chat', '5722h0000004Cm3', '00D2h0000000aGV');
+        </script>
+-->
+        <style type='text/css'>
+            .embeddedServiceHelpButton .helpButton .uiButton {
+                background-color: #555555;
+                font-family: "Salesforce Sans", sans-serif;
+            }
+            .embeddedServiceHelpButton .helpButton .uiButton:focus {
+                outline: 1px solid #555555;
+            }
+            @font-face {
+                font-family: 'Salesforce Sans';
+                src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
+                url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype');
+            }
+        </style>
+        
+        <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+        <script type='text/javascript'>
+            var url = window.location.href;
+                    
+            var initESW = function(gslbBaseURL) {
+                embedded_svc.settings.displayHelpButton = true; //Or false
+                embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+        
+                //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+                //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+        
+                //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+                //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+                
+                // Settings for Chat
+                embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+                    this.url = url;
+                    console.log("came here "+ url);
+                    if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("chat")){
+                        return "5731W000000blNV";
+                    }
+                        
+                    else if (prechatFormData[3].value === "Need more information on available plans, features and pricing")
+                    return "573400000008PFQ";
+                    else if (prechatFormData[3].value === "Billing on an existing DocuSign plan")
+                    return "573400000008PFQ"; 
+                    else if (prechatFormData[3].value === "Get customer support")
+                    return "573400000008PFQ";
+                    else if (prechatFormData[3].value === "General product inquiry")
+                    return "573400000008PFQ";
+                    
+                    else{
+                        return "573400000008PFQ";
+                    }   
+                };
+                
+                /*embedded_svc.settings.prepopulatedPrechatFields = {
+                    FirstName: “John”,
+                    LastName: “Doe”,
+                    Email: “john.doe@salesforce.com”,
+                    Subject: “Hello routing”
+                };
+                */
+                //embedded_svc.settings.fallbackRouting = ["573400000008PFQ"]; //An array of button IDs, user IDs, or userId_buttonId
+                //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+        
+                embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+                embedded_svc.settings.entryFeature = 'LiveAgent';
+        
+                embedded_svc.init(
+                    'https://docusign--hv.my.salesforce.com',
+                    'https://hv-docusigncommunity.cs36.force.com',
+                    gslbBaseURL,
+                    '00D2h0000000aGV',
+                    'webchat',
+                    {
+                        baseLiveAgentContentURL: 'https://c.la3-c1cs-ph2.salesforceliveagent.com/content',
+                        deploymentId: '5722h0000004Cm3',
+                        buttonId: '5731W000000blNV',
+                        baseLiveAgentURL: 'https://d.la3-c1cs-ph2.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1W000000TN3GUAW_16b75ea4b2e',
+                        isOfflineSupportEnabled: false
+                    }
+                );
+            };
+        
+            if (!window.embedded_svc) {
+                var s = document.createElement('script');
+                s.setAttribute('src', 'https://docusign--hv.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.onload = function() {
+                    initESW(null);
+                };
+                document.body.appendChild(s);
+            } else {
+                initESW('https://service.force.com');
+            }
+        </script>
+</body>
+</html>

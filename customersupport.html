@@ -8,7 +8,6 @@
         liveagent.showWhenOffline('5731W000000blNV', document.getElementById('liveagent_button_offline_5731W000000blNV'));
         });</script>
         
-
         <script type='text/javascript' src='https://c.la3-c1cs-ph2.salesforceliveagent.com/content/g/js/50.0/deployment.js'></script>
         <script type='text/javascript'>
         liveagent.init('https://d.la3-c1cs-ph2.salesforceliveagent.com/chat', '5722h0000004Cm3', '00D2h0000000aGV');
@@ -86,32 +85,32 @@
                 embedded_svc.settings.entryFeature = 'LiveAgent';
         
                 embedded_svc.init(
-			'https://docusign--hv.my.salesforce.com',
-			'https://hv-docusigncommunity.cs36.force.com',
-			gslbBaseURL,
-			'00D2h0000000aGV',
-			'webchat',
-			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-ph2.salesforceliveagent.com/content',
-				deploymentId: '572400000008PFB',
-				buttonId: '573400000008PFQ',
-				baseLiveAgentURL: 'https://d.la3-c1cs-ph2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1W000000TN3GUAW_16b75ea4b2e',
-				isOfflineSupportEnabled: false
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://docusign--hv.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-    </script>
+                    'https://docusign--hv.my.salesforce.com',
+                    'https://hv-docusigncommunity.cs36.force.com',
+                    gslbBaseURL,
+                    '00D2h0000000aGV',
+                    'webchat',
+                    {
+                        baseLiveAgentContentURL: 'https://c.la3-c1cs-ph2.salesforceliveagent.com/content',
+                        deploymentId: '5722h0000004Cm3',
+                        buttonId: '5731W000000blNV',
+                        baseLiveAgentURL: 'https://d.la3-c1cs-ph2.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1W000000TN3GUAW_16b75ea4b2e',
+                        isOfflineSupportEnabled: false
+                    }
+                );
+            };
+        
+            if (!window.embedded_svc) {
+                var s = document.createElement('script');
+                s.setAttribute('src', 'https://docusign--hv.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.onload = function() {
+                    initESW(null);
+                };
+                document.body.appendChild(s);
+            } else {
+                initESW('https://service.force.com');
+            }
+        </script>
 </body>
 </html>

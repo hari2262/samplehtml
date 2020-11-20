@@ -43,12 +43,12 @@
                 //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
                 //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
                 console.log("came here");
-                console.log(window.location.href);
+                //console.log(window.location.href);
                 console.log(url.includes("samplehtml/chtuu"));
                 // Settings for Chat
                 embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-                    
-                    
+                    this.url = url;
+                    console.log(url);
                     if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("chtuu")){
                         return "5731W000000blNV";
                     }
@@ -62,7 +62,9 @@
                     else if (prechatFormData[3].value === "General product inquiry")
                     return "573400000008PFQ";
                     
-                    //else return "573400000008PFQ";   
+                    else{
+                        return "573400000008PFQ";
+                    }   
                 };
                 
                 /*embedded_svc.settings.prepopulatedPrechatFields = {

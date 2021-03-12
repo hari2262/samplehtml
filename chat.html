@@ -46,8 +46,13 @@ var url = window.location.href;
         },{
           "label":"Subject", 
           "transcriptFields": ["Pre_Chat_Subject__c"]
-        }];
-    
+        },{  
+	    "label":"Visting URL",
+	    "value":"www.abc.com",
+	    "transcriptFields":[ "Visting_URL__c" ],
+	    "displayToAgent":true
+	}];
+		
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)

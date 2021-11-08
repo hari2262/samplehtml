@@ -47,7 +47,7 @@
                     this.url = url;
                     console.log("came here "+ url);
                     if (prechatFormData[3].value === "Purchasing a DocuSign plan" && url.includes("chat")){
-                        return "5731W000000blNV";
+                        return "5731W000000blNV"; //web sales snap in (5731W000000blNV)
                     }
                         
                     else if (prechatFormData[3].value === "Need more information on available plans, features and pricing" && url.includes("customersupport")){
@@ -78,7 +78,7 @@
                     Subject: “Hello routing”
                 };
                 */
-                //embedded_svc.settings.fallbackRouting = ["5731W000000blNV"]; //An array of button IDs, user IDs, or userId_buttonId
+                embedded_svc.settings.fallbackRouting = ["5731W000000blNV"]; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
         
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];

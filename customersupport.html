@@ -23,18 +23,21 @@
 var url = window.location.href;
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		var language = 'pt_Br';
+		var language = 'en';
 		embedded_svc.settings.language = language; //For example, enter 'en' or 'pt_BR'
 		
 		var firstName;
+		var lastName;
 		if(language == 'pt_Br'){
 			firstName = 'Primeiro Nome';
+			lastName = 'Sobrenome';
 		}
 		else{
 			firstName = 'First Name';
+			lastName = 'Last Name';
 		}
 
-		embedded_svc.settings.defaultMinimizedText = 'LATAM Chat'; //(Defaults to Chat with an Expert)
+		embedded_svc.settings.defaultMinimizedText = 'Web Sales Chat'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
@@ -45,7 +48,7 @@ var url = window.location.href;
 		  "label":firstName,  
 		  "transcriptFields": ["Pre_Chat_First_Name__c"]
 		},{
-		  "label":"Last Name", 
+		  "label":lastName, 
 		  "transcriptFields": ["Pre_Chat_Last_Name__c"]
 		},{
 		  "label":"Email", 

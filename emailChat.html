@@ -3,8 +3,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <body>
      
-    <p>Hello World Chat Email FollowUp</p>
-	  <style type='text/css'>
+    <p>Hello World</p>
+    <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #555555;
 		font-family: "Salesforce Sans", sans-serif;
@@ -24,14 +24,25 @@
 	var url = window.location.href;
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = 'en-US'; //For example, enter 'en' or 'en-US'
+		var language = 'en';
+		embedded_svc.settings.language = language; //For example, enter 'en' or 'pt_BR'
+		
+		var firstName;
+		if(language == 'pt_Br'){
+			firstName = 'Primeiro Nome';
+		}
+		else{
+			firstName = 'First Name';
+		}
+		
 
 		embedded_svc.settings.defaultMinimizedText = 'Email Chat'; //(Defaults to Chat with an Expert)
-		embedded_svc.settings.disabledMinimizedText = 'Offline'; //(Defaults to Agent Offline)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
 		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
+		// Settings for Chat
 		// Settings for Chat
 		embedded_svc.settings.extraPrechatFormDetails = [{
 		  "label":firstName,  
@@ -46,6 +57,9 @@
 		  "value":url,
 		  "transcriptFields": ["Visting_URL__c"]
 		}];
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
@@ -62,7 +76,7 @@
 				buttonId: '5731W000000blNV',
 				baseLiveAgentURL: 'https://d.la3-c1cs-ia4.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1W000000TN3GUAW_16b75ea4b2e',
-				isOfflineSupportEnabled: true
+				isOfflineSupportEnabled: false
 			}
 		);
 	};
